@@ -1,7 +1,7 @@
 function Home({user}) {
     return (
       <div className="home">
-        <h3>Welcome back {user.username}!</h3>
+        <h3>Welcome {user.username}!</h3>
       </div>
     );
   }

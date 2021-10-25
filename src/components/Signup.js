@@ -45,11 +45,9 @@ function Signup({ setCurrentUser, url }) {
             })
     }
 
-
     return (
-        <>
+        <div>
             <h1> Sign Up </h1>
-            <br />
             <form onSubmit={createUser}>
                 <p>
                     <input
@@ -70,7 +68,7 @@ function Signup({ setCurrentUser, url }) {
                     <Button type="submit">Submit</Button>
                 </p>
             </form>
-        </>
+        </div>
     )
 }
 

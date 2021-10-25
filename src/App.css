@@ -1,4 +1,13 @@
-/* themeColors = ["#C9DAEA", "#03F7EB", "#00B295", "#0D6456", "#191516", "#621C2E", "#AB2346" ] */
+:root{
+
+  --customlight: #C9DAEA;
+  --customgrey: #C9DAEA;
+  --customflorescblue: #03F7EB;;
+  --customjungle: #0D6456;
+  --customblack: #191516;
+  --customwine: #621C2E;
+  --customamaranth: #AB2346;
+}
 
 .App {
   text-align: center;
@@ -17,20 +26,21 @@
 
 .App-header {
   font-family: "Brushtroke" ;
-  background-color: #191516;
+  background-color: var(--customblack);
   min-height: 7vh;
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-evenly;
   font-size: calc(10px + 3vmin);
   color: white;
-  margin-top: 0px
+  margin-top: 0px;
+  margin-bottom: 0px;
 }
 
 
 .App-link {
-  color: #61dafb;
+  color: var(--customflorescblue);
 }
 
 @keyframes App-logo-spin {
@@ -47,7 +57,8 @@
 }
 
 .main-div{
-  background-color: rgb(255, 255, 255)
+  background-color: var(--customlight);
+  height: 100vh;
 }
 
 .form-container{
@@ -57,6 +68,7 @@
   margin-top: 10%;
   padding-bottom: 5%;
   border: black solid 5px;
+  background-color: white;
 }
 
 
@@ -68,25 +80,54 @@
   color: #03F7EB;
 }
 .navbar{
-  margin-left: 25%;
-  margin-right: 25%;
+  margin-left: 22%;
+  margin-right: 22%;
+  margin-top: 0px;
   display: flex;
   flex-direction: row;
-  align-items: center;
-  justify-content: space-evenly
+  justify-content: center;
+  justify-content: space-around;
+  background-color: var(--customblack);
+  border-top: dotted var(--customamaranth) 3px;
 }
+
 .navbar-link {
   text-decoration: none;
-  color: #C9DAEA;
+  color: var(--customblack);
   font-style: bold;
   font-size: 16pt;
   padding: 1vh;
-  /* margin: 0 3vw; */
-  background: rgb(19, 64, 82) 5px;
+  margin-left: 10px;
+  background: var(--customflorescblue);
+  
 }
 
 .active-nav {
   color: rgb(0, 0, 0);
   padding: 1vh;
   background: rgb(155, 230, 233);
+}
+
+.user-welcome{
+  color: white;
+  padding-top: 5px;
+  
+}
+
+.logout-link{
+  padding: 3px 5px 3px 5px;
+}
+
+footer{
+  position: fixed;
+  bottom: 0px;
+  height: 5vh;
+  width: 100%;
+  background-color: var(--customwine);
+}
+
+.footer-text {
+  color: var(--customlight);
+  margin-left: 5%;
+  margin-top: 8px;
 }

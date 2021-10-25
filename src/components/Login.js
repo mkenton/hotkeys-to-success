@@ -55,9 +55,8 @@ function Login({ setCurrentUser, url }) {
     }
 
     return (
-        <>
-            <h1> Log In </h1>
-            <br/>
+        <div>
+            <h3> Log In </h3>
             <form onSubmit={handleLogin}>
                 <p>
                     <input
@@ -78,7 +77,7 @@ function Login({ setCurrentUser, url }) {
                 <Button type="submit">Submit</Button>
             </form>
             <p className="validation-error"> {errorMessage} </p>
-        </>
+        </div>
     );
 }
 

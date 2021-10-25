@@ -74,46 +74,51 @@ function App() {
   if (loggedIn) {
     return (
       <Router>
-      <div className="main-div">
-        <Header/>
-        <span>
-          <br />
-          <NavBar handleLogOut={logOut}/>
-        </span>
-        <Home user={user} />
-      </div>
+        <div className="main-div">
+          <Header />
+            <NavBar user={user} handleLogOut={logOut} />
+          <Home user={user} />
+        </div>
       </Router>
     )
   }
   else {
     return (
       <div className="main-div">
-        <Header/>
-        {showLogin ? (
-          <div className="form-container" >
-            <Login setCurrentUser={setCurrentUser} url={url} />
-            <br/>
-            <div className="toggle-container">
-            <p> Don't have an account?</p>
-            <Button onClick={() => setShowLogin(false)}>
-              Sign Up
-            </Button>
-            </div>
-          </div>
-        ) : (
-          <div className="form-container">
-            <SignUp setCurrentUser={setCurrentUser} url={url} />
-            <br/>
-            <div className="toggle-container">
-            <p>Already have an account?</p>
-              <Button variant="fill" color="secondary" onClick={() => setShowLogin(true)}>
-                Log In
-              </Button>
+        <Header />
+        <div className="form-container" >
+        <h2>Welcome to HotKeys To Success!</h2>
+          <p>Sign up to begin mastering tips, hacks, and shortcuts!</p>
+          {showLogin ? (
+            <>
+              
+              <Login setCurrentUser={setCurrentUser} url={url} />
+              <br />
+              <div className="toggle-container">
+                <p> Don't have an account?</p>
+                <Button variant="outline" color="secondary" onClick={() => setShowLogin(false)}>
+                  Sign Up
+                </Button>
               </div>
-          </div>
-        )}
-        </div>)
-
+            </>
+          ) : (
+            <>
+              <SignUp setCurrentUser={setCurrentUser} url={url} />
+              <br />
+              <div className="toggle-container">
+                <p>Already have an account?</p>
+                <Button variant="outline" onClick={() => setShowLogin(true)}>
+                  Log In
+                </Button>
+              </div>
+            </>
+          )}
+        </div>
+        <footer>
+          <p className="footer-text" > © Michael Kenton 2021</p>
+          </footer>
+      </div>)
+      
         }
 }
 

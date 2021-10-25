@@ -1,15 +1,15 @@
 import styled from "styled-components";
 
-const themeColors = ["#C9DAEA", "#03F7EB", "#00B295", "#0D6456", "#191516", "#621C2E", "#AB2346" ] 
+const themeColors = ["F2F5F7", "#C9DAEA", "#03F7EB", "#00B295", "#0D6456", "0D6456", "#191516", "#621C2E", "#AB2346" ] 
 
 const COLORS = {
   primary: {
-    "--main": themeColors[2],
-    "--accent": themeColors[4],
+    "--main": themeColors[3],
+    "--accent": themeColors[6],
   },
   secondary: {
-    "--main": themeColors[1],
-    "--accent": themeColors[4],
+    "--main": themeColors[2],
+    "--accent": themeColors[6],
   },
 };
 
@@ -37,16 +37,16 @@ const ButtonBase = styled.button`
 const FillButton = styled(ButtonBase)`
   background-color: var(--main);
   color: var(--accent);
-
+  border: 3px solid ${themeColors[4]};
   &:hover {
     opacity: 0.9;
   }
 `;
 
 const OutlineButton = styled(ButtonBase)`
-  background-color: white;
-  color: var(--main);
-  border: 2px solid var(--main);
+  background-color: ${themeColors[1]};
+  color: var(--accent);
+  border: 3px solid ${themeColors[6]};
 
   &:hover {
     background: hsl(235deg 85% 97%);
