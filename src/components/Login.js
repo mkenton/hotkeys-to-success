@@ -1,4 +1,6 @@
 import { useState } from 'react'
+import { Button, Heading } from '../styles';
+
 
 function Login({ setCurrentUser, url }) {
 
@@ -25,7 +27,6 @@ function Login({ setCurrentUser, url }) {
         event.target.reset();
 
         const user = { "username": username, "password": password };
-        // const user = {username, password };
         console.log(user)
 
         fetch(`${url}/login`, {
@@ -46,28 +47,24 @@ function Login({ setCurrentUser, url }) {
                             console.log("response OK!!");
                         })
                 }
-
                 else {
                     setErrorMessage(response.message)
                     console.log("error response:", response)
                 }
-
-
-            }
-            )
+            })
     }
 
-
     return (
-        <div>
-            <h1> LOGIN FORM </h1>
+        <>
+            <h1> Log In </h1>
+            <br/>
             <form onSubmit={handleLogin}>
                 <p>
                     <input
                         type="text"
                         id="username"
                         onChange={(e) => { setUsername(e.target.value) }}
-                        placeholder="username"
+                        placeholder="Username"
                     />
                 </p>
                 <p>
@@ -75,13 +72,13 @@ function Login({ setCurrentUser, url }) {
                         type="password"
                         id="password"
                         onChange={(e) => { setPassword(e.target.value) }}
-                        placeholder="password"
+                        placeholder="Password"
                     />
                 </p>
-                <input type="submit" />
+                <Button type="submit">Submit</Button>
             </form>
             <p className="validation-error"> {errorMessage} </p>
-        </div>
+        </>
     );
 }
 

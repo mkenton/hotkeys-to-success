@@ -1,3 +1,5 @@
+/* themeColors = ["#C9DAEA", "#03F7EB", "#00B295", "#0D6456", "#191516", "#621C2E", "#AB2346" ] */
+
 .App {
   text-align: center;
 }
@@ -14,15 +16,18 @@
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  font-family: "Brushtroke" ;
+  background-color: #191516;
+  min-height: 7vh;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  justify-content: space-around;
+  font-size: calc(10px + 3vmin);
   color: white;
+  margin-top: 0px
 }
+
 
 .App-link {
   color: #61dafb;
@@ -38,5 +43,50 @@
 }
 
 .validation-error {
-  color: red;
+  color: #AB2346;
+}
+
+.main-div{
+  background-color: rgb(255, 255, 255)
+}
+
+.form-container{
+  display: block;
+  width: 40%;
+  margin-left: 30%;
+  margin-top: 10%;
+  padding-bottom: 5%;
+  border: black solid 5px;
+}
+
+
+.form-container > * {
+  margin-left: 5%
+}
+
+.symbols{
+  color: #03F7EB;
+}
+.navbar{
+  margin-left: 25%;
+  margin-right: 25%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly
+}
+.navbar-link {
+  text-decoration: none;
+  color: #C9DAEA;
+  font-style: bold;
+  font-size: 16pt;
+  padding: 1vh;
+  /* margin: 0 3vw; */
+  background: rgb(19, 64, 82) 5px;
+}
+
+.active-nav {
+  color: rgb(0, 0, 0);
+  padding: 1vh;
+  background: rgb(155, 230, 233);
 }

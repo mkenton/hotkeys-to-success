@@ -1,9 +1,13 @@
 import React, { useEffect, useState } from 'react'
+import { Route, BrowserRouter as Router, Switch } from "react-router-dom"
 import './App.css';
+import Header from './components/Header'
 import SignUp from './components/Signup';
 import Login from './components/Login';
-import Home from './components/Home'
-import { BrowserRouter, Switch, Route, Link, Redirect } from 'react-router-dom';
+import Home from './components/Home';
+import Button from './styles/Button';
+import NavBar from './components/NavBar'
+// import { BrowserRouter, Switch, Route, Link, Redirect } from 'react-router-dom';
 
 
 function App() {
@@ -16,6 +20,7 @@ function App() {
 
   const [user, setUser] = useState({})
   const [loggedIn, setLoggedIn] = useState(false);
+  const [showLogin, setShowLogin] = useState(true);
 
   function setCurrentUser(currentUser) {
     setUser(currentUser);
@@ -49,63 +54,70 @@ function App() {
     }
   }, []);
 
-//   if (loggedIn) {
-//     return (
-//       <Home user={user}/>
-//         )
-//  }
-//         else {
-  return (
-        <div className="main-div">
-          {loggedIn ? (
-            <h1 className="greeting-text">Welcome back {user.username}!</h1>
-          ) : (
-            <div className="please-log-in">
-              <h2>I'm sorry, I don't know who you are...</h2>
-              <h3>Please log in below!</h3>
+  //   if (loggedIn) {
+  //     return (
+  //       <Home user={user}/>
+  //         )
+  //  }
+  //         else {
+  // return (
+  //     <div className="main-div">{
+  //       loggedIn ? ( 
+  //   <Home user={user} />
+  //   ):
+  //         <Login setCurrentUser={setCurrentUser} url={url}/>
+  // }
+  // </div>
+
+
+
+  if (loggedIn) {
+    return (
+      <Router>
+      <div className="main-div">
+        <Header/>
+        <span>
+          <br />
+          <NavBar handleLogOut={logOut}/>
+        </span>
+        <Home user={user} />
+      </div>
+      </Router>
+    )
+  }
+  else {
+    return (
+      <div className="main-div">
+        <Header/>
+        {showLogin ? (
+          <div className="form-container" >
+            <Login setCurrentUser={setCurrentUser} url={url} />
+            <br/>
+            <div className="toggle-container">
+            <p> Don't have an account?</p>
+            <Button onClick={() => setShowLogin(false)}>
+              Sign Up
+            </Button>
             </div>
-          )}
+          </div>
+        ) : (
+          <div className="form-container">
+            <SignUp setCurrentUser={setCurrentUser} url={url} />
+            <br/>
+            <div className="toggle-container">
+            <p>Already have an account?</p>
+              <Button variant="fill" color="secondary" onClick={() => setShowLogin(true)}>
+                Log In
+              </Button>
+              </div>
+          </div>
+        )}
+        </div>)
 
-          <BrowserRouter>
-            <Link to="/login">Login</Link>
-            <span>---||||---</span>
-            <Link to="/signup">SignUp</Link>
-            <br />
-            {loggedIn ? (
-              <span>
-                <br />
-                <button onClick={logOut}>Log Out</button>
-              </span>
-            ) : null}
-            <br />
-            <Link to="/">Home</Link>
-            <br />
-
-            <br />
-            <Switch>
-              <Route exact path="/">
-                <Home user={user}/>
-              </Route>
-
-              <Route exact path="/login">
-                {loggedIn ? (
-                  <Redirect to="/" />
-                ) : (
-                  <Login setCurrentUser={setCurrentUser} url={url} />
-                )}
-              </Route>
-
-              <Route exact path="/signup">
-                {loggedIn ? <Redirect to="/" /> : <SignUp url={url} />}
-              </Route>
-
-              {/* <Route exact path="/auth">
-            <AuthDemo loggedIn={loggedIn} />
-          </Route> */}
-            </Switch>
-          </BrowserRouter>
-        </div>
-        );
+        }
 }
 
-        export default App;
+export default App;
+
+
+
