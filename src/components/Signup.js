@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Redirect } from 'react-router-dom';
 
-function Signup({url}) {
+function Signup({ url }) {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [created, setCreated] = useState(false);
@@ -24,19 +24,39 @@ function Signup({url}) {
             },
             body: JSON.stringify({ user }),
         })
-            .then((r) => r.json())
             .then((response) => {
-                if (response.status === 'created') {
-                    setCreated(true);
-                    setErrorMessage('');
+                if (response.ok) {
+                    console.log("signup created response: ", response)
+                    response.json()
+                        .then(res => {
+                            console.log("response data", res);
+                            setCreated(true);
+                            setErrorMessage('');
+                            // console.log("error message: ", errorMessage)
+
+                        })
                 }
-            })
-            .catch((response) => {
-                setErrorMessage(response.message);
-                console.log(response)
+                else {
+                    // console.log("response not OK: ", response)
+                    response.json()
+                    .then(res => {
+                        // console.log(res.error[0])
+                        setErrorMessage(res.error[0])
+                        setUsername('')
+                        setPassword('')
+                    })
+                    
+                }
             }
-            );
+            )
     }
+    //         .catch((response) => {
+    //             setErrorMessage(response.message);
+    //             console.log("signup catch response: ", response)
+    //             console.log("error message: ", errorMessage)
+    //         }
+    //         );
+    // }
 
     return (
         <div>
@@ -46,7 +66,6 @@ function Signup({url}) {
                 <div>
                     <h1> SIGNUP FORM </h1>
                     <div className="please-log-in">
-                        <p>{errorMessage}</p>
                     </div>
                     <br />
                     <form onSubmit={createUser}>
@@ -64,6 +83,7 @@ function Signup({url}) {
                             placeholder="Password"
                             onChange={(e) => setPassword(e.target.value)}
                         />
+                        <p className="validation-error">{errorMessage}</p>
                         <p>
                             <button type="submit">Submit</button>
                         </p>
@@ -74,4 +94,5 @@ function Signup({url}) {
         </div>
     );
 }
+
 export default Signup

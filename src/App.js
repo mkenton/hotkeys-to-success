@@ -49,61 +49,63 @@ function App() {
     }
   }, []);
 
+//   if (loggedIn) {
+//     return (
+//       <Home user={user}/>
+//         )
+//  }
+//         else {
   return (
-    <div className="main-div">
-      {loggedIn ? (
-        <h1 className="greeting-text">Welcome back {user.username}!</h1>
-      ) : (
-        <div className="please-log-in">
-          <h2>I'm sorry, I don't know who you are...</h2>
-          <h3>Please log in below!</h3>
-        </div>
-      )}
+        <div className="main-div">
+          {loggedIn ? (
+            <h1 className="greeting-text">Welcome back {user.username}!</h1>
+          ) : (
+            <div className="please-log-in">
+              <h2>I'm sorry, I don't know who you are...</h2>
+              <h3>Please log in below!</h3>
+            </div>
+          )}
 
-      <BrowserRouter>
-        <Link to="/login">Login</Link>
-        <span>---||||---</span>
-        <Link to="/signup">SignUp</Link>
-        <br />
-        {loggedIn ? (
-          <span>
+          <BrowserRouter>
+            <Link to="/login">Login</Link>
+            <span>---||||---</span>
+            <Link to="/signup">SignUp</Link>
             <br />
-            <button onClick={logOut}>Log Out</button>
-          </span>
-        ) : null}
-        <br />
-        <Link to="/">Home (Click here if you are lost)</Link>
-        <br />
-        <Link to="/auth">
-          Auth Check{' '}
-          {!loggedIn
-            ? "(Works better if you're logged in!)"
-            : "(Try it now you're logged in!)"}
-        </Link>{' '}
-        <br />
-        <Switch>
-          <Route exact path="/">
-            <Home />
-          </Route>
-
-          <Route exact path="/login">
             {loggedIn ? (
-              <Redirect to="/" />
-            ) : (
-              <Login setCurrentUser={setCurrentUser} url={url} />
-            )}
-          </Route>
+              <span>
+                <br />
+                <button onClick={logOut}>Log Out</button>
+              </span>
+            ) : null}
+            <br />
+            <Link to="/">Home</Link>
+            <br />
 
-          <Route exact path="/signup">
-            {loggedIn ? <Redirect to="/" /> : <SignUp url={url}/>}
-          </Route>
+            <br />
+            <Switch>
+              <Route exact path="/">
+                <Home user={user}/>
+              </Route>
 
-          {/* <Route exact path="/auth">
+              <Route exact path="/login">
+                {loggedIn ? (
+                  <Redirect to="/" />
+                ) : (
+                  <Login setCurrentUser={setCurrentUser} url={url} />
+                )}
+              </Route>
+
+              <Route exact path="/signup">
+                {loggedIn ? <Redirect to="/" /> : <SignUp url={url} />}
+              </Route>
+
+              {/* <Route exact path="/auth">
             <AuthDemo loggedIn={loggedIn} />
           </Route> */}
-        </Switch>
-      </BrowserRouter>
-    </div>
-  );
+            </Switch>
+          </BrowserRouter>
+        </div>
+        );
 }
-export default App;
+
+        export default App;

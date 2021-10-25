@@ -1,7 +1,7 @@
-function Home() {
+function Home({user}) {
     return (
       <div className="home">
-        <h1>This is the Home Page</h1>
+        <h3>Welcome back {user.username}!</h3>
       </div>
     );
   }
