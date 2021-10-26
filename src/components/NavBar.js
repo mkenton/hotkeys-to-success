@@ -9,8 +9,8 @@ function NavBar({ user, handleLogOut }) {
             <div className="navgrid1">
             <span className="user-welcome">Welcome {user.username}! </span>
             </div>
-            <div className="navlink-container">
-                <nav >
+            <div className="navlink-div">
+                <nav className="navlink-container">
                     <NavLink exact activeClassName="active-nav" className="navbar-link" to="/">Home</NavLink>
                     <NavLink exact activeClassName="active-nav" className="navbar-link" to="/cheat_sheet">Cheat Sheet</NavLink>
                     <NavLink exact activeClassName="active-nav" className="navbar-link" to="/lessons">Lessons</NavLink>
