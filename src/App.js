@@ -8,6 +8,7 @@ import Home from './components/Home';
 import Button from './styles/Button';
 import NavBar from './components/NavBar'
 import CheatSheet from './components/CheatSheet'
+import LessonContainer from './components/LessonContainer';
 // import { BrowserRouter, Switch, Route, Link, Redirect } from 'react-router-dom';
 
 
@@ -55,22 +56,6 @@ function App() {
     }
   }, []);
 
-  //   if (loggedIn) {
-  //     return (
-  //       <Home user={user}/>
-  //         )
-  //  }
-  //         else {
-  // return (
-  //     <div className="main-div">{
-  //       loggedIn ? ( 
-  //   <Home user={user} />
-  //   ):
-  //         <Login setCurrentUser={setCurrentUser} url={url}/>
-  // }
-  // </div>
-
-
 
   if (loggedIn) {
     return (
@@ -81,6 +66,9 @@ function App() {
           <Switch>
             <Route path="/cheat_sheet">
               <CheatSheet user={user}/>
+            </Route>
+            <Route path="/lessons">
+              <LessonContainer/>
             </Route>
             <Route exact path="/">
               <Home user={user} />
@@ -99,7 +87,7 @@ function App() {
         <Header />
         <div className="form-container" >
           <h2>Welcome to HotKeys To Success!</h2>
-          <p>Sign up to begin mastering tips, hacks, and shortcuts!</p>
+          <p>Sign up to begin your mastery of hotkeys and shortcuts!</p>
           {showLogin ? (
             <>
 
