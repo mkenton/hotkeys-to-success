@@ -52,7 +52,8 @@ function Login({ setCurrentUser, url }) {
                         .then((response) => {
                             console.log("error response:", response)
                             setErrorMessage(response.message)
-                            
+                            setUsername('')
+                            setPassword('')
                         })
                 }
             })
