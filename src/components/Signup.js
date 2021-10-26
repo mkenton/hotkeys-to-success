@@ -12,8 +12,9 @@ function Signup({ setCurrentUser, url }) {
         event.target.reset();
 
         let user = {
-            username,
-            password,
+            "username" : username,
+            "display_name" : username,
+            "password" : password,
         };
 
         fetch(`${url}/users`, {
@@ -30,7 +31,7 @@ function Signup({ setCurrentUser, url }) {
                     response.json()
                         .then(res => {
                             console.log("response data", res);
-                            setCurrentUser(true)
+                            setCurrentUser(res.user)
                             setErrorMessage('');
                         })
                 }
@@ -47,7 +48,7 @@ function Signup({ setCurrentUser, url }) {
 
     return (
         <div>
-            <h1> Sign Up </h1>
+            <h2> Sign Up </h2>
             <form onSubmit={createUser}>
                 <p>
                     <input

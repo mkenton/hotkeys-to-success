@@ -7,6 +7,7 @@ import Login from './components/Login';
 import Home from './components/Home';
 import Button from './styles/Button';
 import NavBar from './components/NavBar'
+import CheatSheet from './components/CheatSheet'
 // import { BrowserRouter, Switch, Route, Link, Redirect } from 'react-router-dom';
 
 
@@ -76,9 +77,19 @@ function App() {
       <Router>
         <div className="main-div">
           <Header />
-            <NavBar user={user} handleLogOut={logOut} />
-          <Home user={user} />
+          <NavBar user={user} handleLogOut={logOut} />
+          <Switch>
+            <Route path="/cheat_sheet">
+              <CheatSheet user={user}/>
+            </Route>
+            <Route exact path="/">
+              <Home user={user} />
+            </Route>
+          </Switch>
         </div>
+        <footer>
+          <p className="footer-text" > © Michael Kenton 2021</p>
+        </footer>
       </Router>
     )
   }
@@ -87,11 +98,11 @@ function App() {
       <div className="main-div">
         <Header />
         <div className="form-container" >
-        <h2>Welcome to HotKeys To Success!</h2>
+          <h2>Welcome to HotKeys To Success!</h2>
           <p>Sign up to begin mastering tips, hacks, and shortcuts!</p>
           {showLogin ? (
             <>
-              
+
               <Login setCurrentUser={setCurrentUser} url={url} />
               <br />
               <div className="toggle-container">
@@ -116,10 +127,10 @@ function App() {
         </div>
         <footer>
           <p className="footer-text" > © Michael Kenton 2021</p>
-          </footer>
+        </footer>
       </div>)
-      
-        }
+
+  }
 }
 
 export default App;

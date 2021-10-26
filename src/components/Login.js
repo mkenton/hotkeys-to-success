@@ -39,24 +39,28 @@ function Login({ setCurrentUser, url }) {
         })
             .then((response) => {
                 if (response.ok) {
-                    console.log("login created response: ", response)
+                    // console.log("login successfull! response: ", response)
                     response.json()
                         .then((response) => {
                             localStorage.token = response.jwt;
                             setCurrentUser(response.user);
-                            console.log("response OK!!");
+                            // console.log("json()\'d response:" , response)
                         })
                 }
                 else {
-                    setErrorMessage(response.message)
-                    console.log("error response:", response)
+                    response.json()
+                        .then((response) => {
+                            console.log("error response:", response)
+                            setErrorMessage(response.message)
+                            
+                        })
                 }
             })
     }
 
     return (
         <div>
-            <h3> Log In </h3>
+            <h2> Log In </h2>
             <form onSubmit={handleLogin}>
                 <p>
                     <input

@@ -1,10 +1,10 @@
 :root{
 
-  --customlight: #C9DAEA;
+  --customlight: #F2F5F7;
   --customgrey: #C9DAEA;
   --customflorescblue: #03F7EB;;
   --customjungle: #0D6456;
-  --customblack: #191516;
+  --customblack: #353234;
   --customwine: #621C2E;
   --customamaranth: #AB2346;
 }
@@ -27,7 +27,7 @@
 .App-header {
   font-family: "Brushtroke" ;
   background-color: var(--customblack);
-  min-height: 7vh;
+  min-height: 10vh;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -57,7 +57,7 @@
 }
 
 .main-div{
-  background-color: var(--customlight);
+  background-color: var(--customgrey);
   height: 100vh;
 }
 
@@ -79,43 +79,59 @@
 .symbols{
   color: #03F7EB;
 }
-.navbar{
-  margin-left: 22%;
-  margin-right: 22%;
+.navbar-container{
+  /* margin-left: 10%;
+  margin-right: 10%; */
   margin-top: 0px;
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  /* flex-direction: row;
   justify-content: center;
-  justify-content: space-around;
-  background-color: var(--customblack);
-  border-top: dotted var(--customamaranth) 3px;
+  justify-content: space-around; */
+  
 }
 
+.navlink-container{
+  background-color: var(--customblack);
+  /* border-top: dotted var(--customamaranth) 3px; */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  
+}
 .navbar-link {
+  display: inline-flex;
   text-decoration: none;
   color: var(--customblack);
   font-style: bold;
   font-size: 16pt;
   padding: 1vh;
-  margin-left: 10px;
-  background: var(--customflorescblue);
+  margin-left: 20px;
+  margin-right: 20px;
+  background: var(--customlight);
+  border: var(--customgrey) solid 3px;
   
 }
 
 .active-nav {
   color: rgb(0, 0, 0);
-  padding: 1vh;
-  background: rgb(155, 230, 233);
+  background: white;
+  border: var(--customamaranth) solid 3px;
 }
 
 .user-welcome{
-  color: white;
+  color: var(--customlight);
   padding-top: 5px;
   
 }
 
 .logout-link{
   padding: 3px 5px 3px 5px;
+  color: var(--customlight);
+}
+
+.logout-link:hover {
+  cursor: pointer
 }
 
 footer{
@@ -131,3 +147,23 @@ footer{
   margin-left: 5%;
   margin-top: 8px;
 }
+
+.navgrid1{
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  text-align: center;
+  background-color: var(--customblack);
+  border: dotted var(--customamaranth) 3px;
+}
+.navgrid2{
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  text-align: center;
+  background-color: var(--customblack);
+  border: dotted var(--customamaranth) 3px;
+}
+
