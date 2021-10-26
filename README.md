@@ -2,12 +2,12 @@
 
 ## Project Pitch ##
 
-HotKeys to Success is an interactive playground for mastering productivity-boosting shortcuts for beginner and expert programmers alike. We often find ourselves repeating actions, typing out long statements, and retracing our footsteps in suboptimal ways. In the back of our heads, we often think "there's probably a better way," but we continue with our stubborn habits while myopically focusing only on the code of our present projects. But of course there's a better way! Maybe *you* will have to be the one to make it, but chances are, *something* is out there, and you just need to take the moment to find it! QoL-Interactive aims to teach you shortcuts, allow you to practice them in fun ways, and foster discussion for sharing QoL improvement ideas.
+HotKeys to Success is an interactive playground for mastering productivity-boosting shortcuts for beginner and expert programmers alike. We often find ourselves repeating actions, typing out long statements, and retracing our footsteps in suboptimal ways. In the back of our heads, we often think "there's probably a better way," but we continue with our stubborn habits while myopically focusing only on the code of our present projects. But of course there's a better way! Maybe *you* will have to be the one to make it, but chances are, *something* is out there, and you just need to take the moment to find it! HotKeys to Success aims to teach you shortcuts, allow you to practice them in fun ways, and foster discussion for sharing productivity and QoL (Quality-of-Life) improvement ideas.
 
 HotKeys to Success is a web app comprising 3 main components:
 1. Lessons on VSCode Shortcuts, CLI configs, and other productivity-increasers and time-savers
-2. QoL-centered discussion board where users share their own QoL improvements (useful shortcuts, configurations, bash/zsh aliases, etc.)
-3. Arcade section to put your keyboard shortcut skills to test (stretch goal)
+2. Arcade section to put your keyboard shortcut skills to test
+3. QoL-centered discussion board where users share their own QoL improvements (useful shortcuts, configurations, bash/zsh aliases, etc.) (stretch goal)
 
 
 ## User Stories ##
@@ -17,6 +17,11 @@ HotKeys to Success is a web app comprising 3 main components:
 - As a user, I want to be able to interact with a lesson (e.g. learn a shortcut, see my keypresses on screen, and see the corresponding action/result as it would appear in VSCode.)
 - As A user, I want to be able to mark a lesson complete.
 - As a user, I want to be able to track my lesson completion. (Completed lessons for my user should persist when I log out and log back in).
+- As a user, I want to be able to navigate to a page to play 'Shortcut Arcade' where I am quizzed on keyboard shortcuts am scored on my performance.
+- As a user, I want to be able to view my high scores on 'Shortcut Arcade' and view top scores across all users. 
+
+ *Stretch Goals*
+ 
 - As a user, I want to be able to view a discussion board where QoL topics (e.g. productivity/time-saving techniques & configs) are discussed.
 - As a user, I want to be able to view discussion board topics and click into topics where threads are viewed.
 - As a user, I want to be able to create a thread.
@@ -24,17 +29,16 @@ HotKeys to Success is a web app comprising 3 main components:
 - As a user, I wan to be able to see the usernames of the poster and commenter and time submitted.
 - As a user, I want to be able to edit my own posts. (*stretch: formatting on posts!*)
 - As a user, I want to be able to see that a post is edited, with time of edit.
-- As a user, I want to be able to navigate to a page to play 'Shortcut Arcade' where I am quizzed on keyboard shortcuts am scored on my performance. *(stretch goal)*
-- As a user, I want to be able to view my high scores on 'Shortcut Arcade' and view top scores across all users. *(stretch goal)*
+
 - As an admin, I want to be able to moderate posts.
 - As an admin, I want to be able to create new categories.
 
 
 ## Models & Relationships ##
 
-User has many Lessons through UserLessons
+User has many Lessons through LessonEvents
 
-Lessons has many Users through UserLessons
+Lessons has many Users through LessonEvents
 
 User has many Posts
 
@@ -62,7 +66,7 @@ Post has one User
 - title
 - lesson_category
 
-### UserLessons ###
+### LessonEvents ###
 - id
 - user_id (foreign key)
 - lesson_id (foreign key)
