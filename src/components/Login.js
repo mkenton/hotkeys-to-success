@@ -4,7 +4,7 @@ import { Button, Heading } from '../styles';
 
 function Login({ setCurrentUser, url }) {
 
-    // // refactor for more inputs
+    // // refactor for more inputs, use for all onChange handlers
     // const [formData, setFormData] = useState({
     //     username: "",
     //     password: "",
