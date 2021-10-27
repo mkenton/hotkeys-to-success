@@ -68,7 +68,7 @@ function App() {
               <CheatSheet user={user}/>
             </Route>
             <Route path="/lessons">
-              <LessonContainer/>
+              <LessonContainer user={user} url={url}/>
             </Route>
             <Route exact path="/">
               <Home user={user} />
