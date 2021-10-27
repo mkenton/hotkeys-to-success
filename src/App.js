@@ -17,10 +17,10 @@ function App() {
 
   console.log("proces.env = " , process.env)
   const productionURL = 'https://hotkeys-to-success-api.herokuapp.com/';
-  const developmentURL = 'http://localhost:3000';
-  const url = (process.env.NODE_ENV === "production" ? productionURL : developmentURL)
+  // const developmentURL = 'http://localhost:3000';
+  // const url = (process.env.NODE_ENV === "production" ? productionURL : developmentURL)
 
-  // const url = 'http://localhost:3000'
+  const url = productionURL
 
   const [user, setUser] = useState({})
   const [loggedIn, setLoggedIn] = useState(false);
