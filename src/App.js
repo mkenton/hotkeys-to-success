@@ -21,6 +21,8 @@ function App() {
   // const url = (process.env.NODE_ENV === "production" ? productionURL : developmentURL)
 
   const url = productionURL
+  console.log("api url: ", url)
+  console.log("should exist")
 
   const [user, setUser] = useState({})
   const [loggedIn, setLoggedIn] = useState(false);
