@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Route, BrowserRouter as Router, Switch } from "react-router-dom"
 import './App.css';
 import Header from './components/Header'
+import Footer from './components/Footer'
 import SignUp from './components/Signup';
 import Login from './components/Login';
 import Home from './components/Home';
@@ -75,9 +76,7 @@ function App() {
             </Route>
           </Switch>
         </div>
-        <footer>
-          <p className="footer-text" > © Michael Kenton 2021</p>
-        </footer>
+        <Footer/>
       </Router>
     )
   }
@@ -113,9 +112,7 @@ function App() {
             </>
           )}
         </div>
-        <footer>
-          <p className="footer-text" > © Michael Kenton 2021</p>
-        </footer>
+            <Footer/>
       </div>)
 
   }

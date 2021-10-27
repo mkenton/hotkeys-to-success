@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react'
 
 function LessonContainer({ url }) {
 
-    // const [lessons, setLessons] = useState({})
+    const [lessons, setLessons] = useState({})
 
     useEffect(() => {
         const myHeaders = new Headers();
@@ -18,11 +18,11 @@ function LessonContainer({ url }) {
 
         fetch(`${url}/lessons`, requestOptions)
             .then(response => response.json())
-            .then(result => {
-                console.log(result);
+            .then(data => {
+                console.log('lessondata:', data)
+                setLessons(data)
             }
             )
-
             .catch(error => console.log('error', error));
     }, []);
 

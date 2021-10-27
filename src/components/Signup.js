@@ -10,7 +10,7 @@ function Signup({ setCurrentUser, url }) {
 
 
     function validatePassword(event){
-        if (password != passwordConfirmation) {
+        if (password !== passwordConfirmation) {
             setErrorMessage("Passwords Don't Match")
             event.preventDefault();
             return false
