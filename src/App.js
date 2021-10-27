@@ -15,7 +15,7 @@ import LessonContainer from './components/LessonContainer';
 
 function App() {
 
-  console.log(process.env)
+  console.log("proces.env = " , process.env)
   const productionURL = 'https://hotkeys-to-success-api.herokuapp.com/';
   const developmentURL = 'http://localhost:3000';
   const url = (process.env.NODE_ENV === "production" ? productionURL : developmentURL)
