@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Route, BrowserRouter as Router, Switch } from "react-router-dom"
 import './App.css';
 import Header from './components/Header'
+import Footer from './components/Footer'
 import SignUp from './components/Signup';
 import Login from './components/Login';
 import Home from './components/Home';
@@ -68,16 +69,14 @@ function App() {
               <CheatSheet user={user}/>
             </Route>
             <Route path="/lessons">
-              <LessonContainer/>
+              <LessonContainer user={user} url={url}/>
             </Route>
             <Route exact path="/">
               <Home user={user} />
             </Route>
           </Switch>
         </div>
-        <footer>
-          <p className="footer-text" > © Michael Kenton 2021</p>
-        </footer>
+        <Footer/>
       </Router>
     )
   }
@@ -113,9 +112,7 @@ function App() {
             </>
           )}
         </div>
-        <footer>
-          <p className="footer-text" > © Michael Kenton 2021</p>
-        </footer>
+            <Footer/>
       </div>)
 
   }
