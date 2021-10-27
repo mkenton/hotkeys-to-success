@@ -15,11 +15,12 @@ import LessonContainer from './components/LessonContainer';
 
 function App() {
 
-  // const productionURL = 'https://hotkeys-to-success-api.herokuapp.com/';
-  // const developmentURL = 'http://localhost:3000';
-  // const url = (process.env.NODE_ENV === "production" ? productionURL : developmentURL)
+  console.log(process.env)
+  const productionURL = 'https://hotkeys-to-success-api.herokuapp.com/';
+  const developmentURL = 'http://localhost:3000';
+  const url = (process.env.NODE_ENV === "production" ? productionURL : developmentURL)
 
-  const url = 'http://localhost:3000'
+  // const url = 'http://localhost:3000'
 
   const [user, setUser] = useState({})
   const [loggedIn, setLoggedIn] = useState(false);
