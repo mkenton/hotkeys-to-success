@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Button, Heading } from '../styles';
+import { Button } from '../styles';
 
 
 function Login({ setCurrentUser, url }) {

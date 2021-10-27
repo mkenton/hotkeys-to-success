@@ -1,6 +1,6 @@
 
 import { NavLink } from 'react-router-dom'
-import { Button } from "../styles";
+// import { Button } from "../styles";
 
 
 function NavBar({ user, handleLogOut }) {

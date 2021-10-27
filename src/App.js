@@ -15,14 +15,13 @@ import LessonContainer from './components/LessonContainer';
 
 function App() {
 
-  console.log("proces.env = " , process.env)
-  const productionURL = 'https://hotkeys-to-success-api.herokuapp.com/';
+  // console.log("proces.env = " , process.env)
+  const productionURL = 'https://hotkeys-to-success-api.herokuapp.com';
   // const developmentURL = 'http://localhost:3000';
   // const url = (process.env.NODE_ENV === "production" ? productionURL : developmentURL)
 
   const url = productionURL
-  console.log("api url: ", url)
-  console.log("should exist")
+  // console.log("api url: ", url)
 
   const [user, setUser] = useState({})
   const [loggedIn, setLoggedIn] = useState(false);
