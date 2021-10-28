@@ -105,11 +105,13 @@ body {
   margin-left: 5%
 }
 
-.lesson{
+.cheat{
   border-top: black 2px solid;
+  display: block;
+  text-align: left;
 
 }
-.lesson>p{
+.cheat>p{
 margin-top:1px;
 margin-bottom:1px
 }
@@ -231,7 +233,21 @@ footer {
   background-color: var(--customblack);
 }
 
-
+.cheat-buttons{
+  background-color: #e7e7e7;
+  border: 2px solid #c6cbd1;
+  border-bottom-color: #959da5;
+  border-radius: 3px;
+  box-shadow: inset -3px -5px -0px #959da5;
+  color: #23272b;
+  display: inline-block;
+  font: 12pt SFMono-Regular, Consolas, Liberation Mono, Menlo, Courier, monospace;
+  /* font-size: 11px; */
+  /* line-height: 10px; */
+  padding: 8px 5px;
+  margin: 0px 5px 0px 5px;
+  vertical-align: middle
+}
 
 /* hotkeys test */
 

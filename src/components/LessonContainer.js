@@ -1,5 +1,5 @@
 import Lesson from './Lesson'
-import { useEffect, useState } from 'react'
+// import { useEffect, useState } from 'react'
 
 function LessonContainer({ user, lessons}) {
 
