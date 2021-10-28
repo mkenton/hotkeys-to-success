@@ -26,6 +26,9 @@ function App() {
   const [user, setUser] = useState({})
   const [loggedIn, setLoggedIn] = useState(false);
   const [showLogin, setShowLogin] = useState(true);
+  const [lessons, setLessons] = useState({})
+
+
 
   function setCurrentUser(currentUser) {
     setUser(currentUser);
@@ -37,6 +40,28 @@ function App() {
     setLoggedIn(false);
     localStorage.token = '';
   }
+
+  //fetch lessons
+  useEffect(() => {
+    const myHeaders = new Headers();
+    myHeaders.append("Head", "application/json");
+    myHeaders.append("Content-Type", "application/json");
+
+    const requestOptions = {
+      method: 'GET',
+      headers: myHeaders,
+      redirect: 'follow'
+    };
+
+    fetch(`${url}/lessons`, requestOptions)
+      .then(response => response.json())
+      .then(data => {
+        console.log('lessondata:', data)
+        setLessons(data)
+      }
+      )
+      .catch(error => console.log('error', error));
+  }, []);
 
   // auto-login
   useEffect(() => {
@@ -68,17 +93,17 @@ function App() {
           <NavBar user={user} handleLogOut={logOut} />
           <Switch>
             <Route path="/cheat_sheet">
-              <CheatSheet user={user}/>
+              <CheatSheet user={user} lessons={lessons} />
             </Route>
-            <Route path="/lessons">
-              <LessonContainer user={user} url={url}/>
+            <Route path="/arcade">
+              <LessonContainer user={user} lessons={lessons} />
             </Route>
             <Route exact path="/">
               <Home user={user} />
             </Route>
           </Switch>
         </div>
-        <Footer/>
+        <Footer />
       </Router>
     )
   }
@@ -114,7 +139,7 @@ function App() {
             </>
           )}
         </div>
-            <Footer/>
+        <Footer />
       </div>)
 
   }
