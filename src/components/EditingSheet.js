@@ -1,21 +1,24 @@
 import Cheat from './Cheat'
 
-function EditingSheet({ lessons }) {
+function EditingSheet({ lessons, user }) {
+    // let lesson_event = {
+    //     "user_id": user.id,
+    //     "lesson_id": 1,
+    //     "status": "practiced",
+    // };
 
     return (
  
     <span className="editor-sheet">
-        {/* TODO: map for editor lessons, create component to contain them */}
     {lessons.filter((lesson) => lesson.category === "Editing")
     .map((lesson) => (
         <Cheat 
         key={lesson.id}
         lesson={lesson}/>
     ))}
+    <h2>Feel ready? Mark lesson <button className="complete-button"> Complete</button></h2>
      </span>
     )
 
-
-    //map over fetched shortcut lessons
 }
 export default EditingSheet

@@ -10,9 +10,10 @@
 }
 
 body {
-  margin-bottom: 5vh;
+  margin-bottom: 6vh;
   background-color: var(--customgrey);
 }
+
 .App {
   text-align: center;
 }
@@ -49,14 +50,13 @@ body {
   color: var(--customflorescblue);
 } */
 
-.app-title{
+.app-title {
   /* border: var(--customwine) solid 5px;
   border-radius: 10px;
   box-shadow: 10px 10px 15px var(--customblack);
   padding: 10px;
   color: var(--customamaranth);
   background-color: */
-
   background-color: #fafbfc;
   border: 2px solid #c6cbd1;
   border-bottom-color: #959da5;
@@ -78,6 +78,20 @@ body {
   to {
     transform: rotate(360deg);
   }
+}
+
+h1 {
+  font: 2em SFMono-Regular, Consolas, Liberation Mono, Menlo, Courier, monospace;
+  font-weight: bold;
+}
+
+h2 {
+  font: 16pt SFMono-Regular, Consolas, Liberation Mono, Menlo, Courier, monospace;
+  font-weight: bold;
+}
+
+h3 {
+  color: var(--customwine);
 }
 
 .validation-error {
@@ -105,15 +119,15 @@ body {
   margin-left: 5%
 }
 
-.cheat{
+.cheat {
   border-top: black 2px solid;
   display: block;
   text-align: left;
-
 }
-.cheat>p{
-margin-top:1px;
-margin-bottom:1px
+
+.cheat>p {
+  margin-top: 1px;
+  margin-bottom: 1px
 }
 
 .home-div {
@@ -125,12 +139,25 @@ margin-bottom:1px
   background-color: var(--customlight);
   border: var(--customwine) solid 5px;
   border-radius: 10px;
-  box-shadow: 10px 10px 15px var(--customblack) ;
+  box-shadow: 10px 10px 15px var(--customblack);
   text-align: center;
   padding-right: 3%;
   padding-left: 3%;
 }
 
+.home-prompt-div {
+  display: grid;
+  grid-template-columns: auto auto;
+}
+
+.home-prompt {
+  border: 3px solid var(--customjungle);
+  border-radius: 10px;
+  box-shadow: 2px 2px 5px var(--customblack);
+  padding: 1% 1%;
+  margin: 10px;
+  max-width: 270px;
+}
 
 .symbols {
   /* color: var(--customgrey); */
@@ -203,11 +230,10 @@ margin-bottom:1px
   cursor: pointer
 }
 
-.redirect-link:hover{
+.redirect-link:hover {
   cursor: pointer;
   text-decoration: underline;
 }
-
 
 footer {
   position: fixed;
@@ -233,7 +259,7 @@ footer {
   background-color: var(--customblack);
 }
 
-.cheat-buttons{
+.cheat-buttons, .key-code {
   background-color: #e7e7e7;
   border: 2px solid #c6cbd1;
   border-bottom-color: #959da5;
@@ -246,10 +272,12 @@ footer {
   /* line-height: 10px; */
   padding: 8px 5px;
   margin: 0px 5px 0px 5px;
-  vertical-align: middle
+  vertical-align: middle;
 }
 
-/* hotkeys test */
+.cheat-buttons:hover {
+  cursor: pointer
+}
 
 kbd {
   background-color: #fafbfc;

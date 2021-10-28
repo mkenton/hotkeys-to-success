@@ -20,9 +20,8 @@ function Cheat({lesson}) {
     return (
         <div className="cheat">
             
-       <h3>{lesson.title}</h3>
-       <p>{lesson.description}</p>
-       <p><strong style={{ 'color': pressed ? 'green' : '' }}>Press {lesson.shortcut}</strong> {pressed ? "✅": ""} </p>
+       <p className="key-code" style={{ 'background-color': pressed ? 'rgb(184, 228, 184)' : '' }}>{lesson.title} </p>
+       <p>({lesson.shortcut}): <strong>{lesson.description}</strong> </p>
        <br/>
        </div>
     )
