@@ -8,7 +8,6 @@ function LessonContainer({ user, lessons}) {
 
     return (
         <div className="lesson-container">
-            <h1>Arcade</h1>
             <Lesson lesson={lessons}/>
         </div>
     )
