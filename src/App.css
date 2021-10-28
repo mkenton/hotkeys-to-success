@@ -3,7 +3,7 @@
   --customgrey: #C9DAEA;
   --customflorescblue: #03F7EB;
   --customjungle: #0D6456;
-  --customblack: #474146;
+  --customblack: #363135;
   --customwine: #522430;
   --customamaranth: #AB2346;
   --customdarkgrey: #a6b3c0;
@@ -151,7 +151,7 @@ h3 {
 }
 
 .home-prompt {
-  border: 3px solid var(--customjungle);
+  border: 3px solid var(--customblack);
   border-radius: 10px;
   box-shadow: 2px 2px 5px var(--customblack);
   padding: 1% 1%;
