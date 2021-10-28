@@ -1,7 +1,7 @@
 import { useHotkeys } from 'react-hotkeys-hook';
 import {useState} from 'react'
 
-function Lesson() {
+function Lesson({lessons}) {
 
     const [count, setCount] = useState(0);
 
@@ -9,7 +9,7 @@ function Lesson() {
 
     return (
         <div className="lesson">
-       <h1>Lesson</h1>
+       <h3>Lesson</h3>
        <span>Pressed 'command+a' key {count} times.</span>
        </div>
     )

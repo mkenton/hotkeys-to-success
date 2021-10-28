@@ -3,12 +3,16 @@
   --customgrey: #C9DAEA;
   --customflorescblue: #03F7EB;
   --customjungle: #0D6456;
-  --customblack: #353234;
+  --customblack: #474146;
   --customwine: #522430;
   --customamaranth: #AB2346;
   --customdarkgrey: #a6b3c0;
 }
 
+body {
+  margin-bottom: 5vh;
+  background-color: var(--customgrey);
+}
 .App {
   text-align: center;
 }
@@ -38,10 +42,33 @@
   margin-bottom: 0px;
   padding-left: 4%;
   padding-right: 4%;
+  padding-bottom: 10px;
 }
 
-.App-link {
+/* .App-link {
   color: var(--customflorescblue);
+} */
+
+.app-title{
+  /* border: var(--customwine) solid 5px;
+  border-radius: 10px;
+  box-shadow: 10px 10px 15px var(--customblack);
+  padding: 10px;
+  color: var(--customamaranth);
+  background-color: */
+
+  background-color: #fafbfc;
+  border: 2px solid #c6cbd1;
+  border-bottom-color: #959da5;
+  border-radius: 3px;
+  box-shadow: inset -3px -5px -0px #959da5;
+  color: #23272b;
+  display: inline-block;
+  font: calc(10px + 3vmin) SFMono-Regular, Consolas, Liberation Mono, Menlo, Courier, monospace;
+  /* font-size: 11px; */
+  /* line-height: 10px; */
+  padding: 3px 5px;
+  vertical-align: middle
 }
 
 @keyframes App-logo-spin {
@@ -61,14 +88,14 @@
 
 .main-div {
   background-color: var(--customgrey);
-  height: 100vh;
+  height: 100%;
 }
 
 .form-container {
   display: block;
   width: 50%;
   margin-left: 25%;
-  margin-top: 10%;
+  margin-top: 5%;
   padding-bottom: 5%;
   border: black solid 5px;
   background-color: white;
@@ -78,23 +105,34 @@
   margin-left: 5%
 }
 
+.lesson{
+  border-top: black 2px solid;
+
+}
+.lesson>p{
+margin-top:1px;
+margin-bottom:1px
+}
+
 .home-div {
   display: block;
   width: 50%;
   margin-left: 25%;
-  margin-top: 5%;
-  padding-bottom: 5%;
+  margin-top: 3%;
+  padding-bottom: 2%;
+  background-color: var(--customlight);
   border: var(--customwine) solid 5px;
-  background-color: white;
+  border-radius: 10px;
+  box-shadow: 10px 10px 15px var(--customblack) ;
   text-align: center;
   padding-right: 3%;
   padding-left: 3%;
 }
 
 
-
 .symbols {
-  color: var(--customgrey);
+  /* color: var(--customgrey); */
+  font-size: calc(10px + 3vmin);
 }
 
 .navbar-container {
@@ -102,7 +140,7 @@
   margin-right: 10%; */
   margin-top: 0px;
   display: grid;
-  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-columns: 2fr 3fr 2fr;
   /* flex-direction: row;
   justify-content: center;
   justify-content: space-around; */
@@ -126,9 +164,10 @@
 .navbar-link {
   display: inline-flex;
   text-decoration: none;
-  color: var(--customblack);
+  color: black;
+  font: 12pt SFMono-Regular, Consolas, Liberation Mono, Menlo, Courier, monospace;
   font-style: bold;
-  font-size: 12pt;
+  /* font-size: 12pt; */
   padding: 0.6vh 1vw;
   background: var(--customdarkgrey);
   border-right: var(--customblack) solid 3px;
@@ -137,8 +176,8 @@
 }
 
 .active-nav {
-  color: rgb(0, 0, 0);
-  padding: 0.6vh 1vw;
+  color: var(--customjungle);
+  /* padding: 0.6vh 1vw; */
   font-size: 12pt;
   background: var(--customgrey);
   border-top: var(--customdarkgrey) solid 3px;
@@ -154,12 +193,19 @@
 
 .logout-link {
   /* padding: 3px 5px 3px 5px; */
-  color: var(--customlight);
+  /* color: var(--customlight);
+  font-size: calc(10px + 3vmin); */
 }
 
 .logout-link:hover {
   cursor: pointer
 }
+
+.redirect-link:hover{
+  cursor: pointer;
+  text-decoration: underline;
+}
+
 
 footer {
   position: fixed;
@@ -170,18 +216,19 @@ footer {
 }
 
 .footer-text {
-  color: var(--customlight);
+  color: var(--customgrey);
   margin-left: 5%;
-  margin-top: 8px;
+  margin-top: 10px;
 }
 
 .navgrid1 {
   padding: 0.6vh 1vw;
-  display: flex;
+  font-size: calc(10px + 1vmin);
+  /* display: flex;
   align-items: center;
-  justify-content: space-evenly;
-  text-align: center;
-  background-color: var(--customwine);
+  justify-content: space-evenly; */
+  text-align: left;
+  background-color: var(--customblack);
 }
 
 
