@@ -27,8 +27,10 @@ function App() {
   const [loggedIn, setLoggedIn] = useState(false);
   const [showLogin, setShowLogin] = useState(true);
   const [lessons, setLessons] = useState({})
+  const [lessonEvents, setLessonEvents] = useState({})
+ 
 
-
+ 
 
   function setCurrentUser(currentUser) {
     setUser(currentUser);
@@ -93,13 +95,13 @@ function App() {
           <NavBar user={user} handleLogOut={logOut} />
           <Switch>
             <Route path="/cheat_sheet">
-              <CheatSheet user={user} lessons={lessons} />
+              <CheatSheet user={user} lessons={lessons} lessonEvents={lessonEvents} setLessonEvents={setLessonEvents} />
             </Route>
             <Route path="/arcade">
               <LessonContainer user={user} lessons={lessons} />
             </Route>
             <Route exact path="/">
-              <Home user={user} />
+              <Home url={url} user={user} lessonEvents={lessonEvents} setLessonEvents={setLessonEvents}/>
             </Route>
           </Switch>
         </div>
