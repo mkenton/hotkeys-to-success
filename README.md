@@ -1,16 +1,17 @@
 # HotKeys to Success #
 
-## Project Pitch ##
-
 HotKeys to Success is an interactive playground for mastering productivity-boosting shortcuts for beginner and expert programmers alike. We often find ourselves repeating actions, typing out long statements, and retracing our footsteps in suboptimal ways. In the back of our heads, we often think "there's probably a better way," but we continue with our stubborn habits while myopically focusing only on the code of our present projects. But of course there's a better way! Maybe *you* will have to be the one to make it, but chances are, *something* is out there, and you just need to take the moment to find it! HotKeys to Success aims to teach you shortcuts, allow you to practice them in fun ways, and foster discussion for sharing productivity and QoL (Quality-of-Life) improvement ideas.
 
-This is the repo for the front-end. Hotkeys to Success is hosted [here](https://hotkeys-to-success.herokuapp.com/ "Hotkeys-to-Success"). The repo for the back end can be found [here](https://github.com/mkenton/hotkeys-to-success-backend "Hotkeys-to-Success-API").
+ **Interact with Hotkeys to Success  [here](https://hotkeys-to-success.herokuapp.com/ "Hotkeys-to-Success")** (the hosted front-end). You are reading currently the read-me for the front-end repository! The repo for the back end can be found [here](https://github.com/mkenton/hotkeys-to-success-backend "Hotkeys-to-Success-API").
 
 HotKeys to Success is a web app comprising 3 main components:
 1. Lessons on VSCode Shortcuts, CLI configs, and other productivity-increasers and time-savers
 2. Arcade section to put your keyboard shortcut skills to test
 3. QoL-centered discussion board where users share their own QoL improvements (useful shortcuts, configurations, bash/zsh aliases, etc.) (stretch goal)
 
+
+
+# Project Details and Future Work #
 
 ## User Stories ##
 - As a user, I want to be able to create an account so that I can log in and use the application.
@@ -237,5 +238,3 @@ Returns discussion posts for specific category. Response JSON looks like this:
   parent_post: 10
 }
 ```
-
-## Wireframe ##
